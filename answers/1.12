@@ -1,12 +1,1 @@
-# Start both backend and frontend containers together
-# Assuming backend (backend-server) is already running on port 5000
-
-# Start frontend container with link to backend service
-docker run -d -p 80:80 -e WS_BACK_URL=http://backend-server:5000 --name mlops-frontend-prod --link backend-server mlops-front:1.0
-
-# Alternatively, if backend isn't running yet, start both:
-# docker run -d -p 5000:5000 -e CURRENT_ENVIRONMENT=dev --name backend-server gsalon/mlops-back:1.0
-# docker run -d -p 80:80 -e WS_BACK_URL=http://backend-server:5000 --name mlops-frontend-prod --link backend-server gsalon/mlops-front:1.0
-
-# The frontend will now call the backend API at http://backend-server:5000/get/example_of_path
-# Access the frontend at http://localhost:80 or http://localhost
+docker run -d -p 80:80 -e TR_WS_BACK_URL=http://backend-server:5000 --name mlops-frontend-prod --link backend-server mlops-front:1.0
