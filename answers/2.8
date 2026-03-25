@@ -1,0 +1,11 @@
+cd app
+
+# Scale the backend service to 3 replicas
+docker-compose up -d --scale backend=3
+
+# Verify all services are running
+docker-compose ps
+
+# Note: This requires removing the explicit port mapping from backend in docker-compose.yml
+# since docker-compose can't bind multiple containers to the same port.
+# The frontend calls backend internally via the service name "backend" on port 5000.

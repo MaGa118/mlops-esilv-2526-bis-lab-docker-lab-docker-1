@@ -1,0 +1,6 @@
+cd app/back
+# Start container with port mapping
+# initial run before env var causes error in app (missing CURRENT_ENVIRONMENT), so service is not available
+# this is expected, not networking issue
+
+docker run --rm -p 5000:5000 --name mlops-back-lab mlops-back:1.0

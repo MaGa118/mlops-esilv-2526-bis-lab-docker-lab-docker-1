@@ -1,0 +1,5 @@
+# Stop all containers created during the lab
+docker stop backend-server mlops-frontend-prod
+
+# Optional: Remove the containers completely
+# docker rm backend-server mlops-frontend-prod

@@ -1,0 +1,4 @@
+cd app/back
+# Start container with port mapping and CURRENT_ENVIRONMENT variable set
+
+docker run --rm -p 5000:5000 --name mlops-back-lab -e CURRENT_ENVIRONMENT=dev mlops-back:1.0

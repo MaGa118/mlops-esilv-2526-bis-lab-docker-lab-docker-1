@@ -1,0 +1,6 @@
+cd app/back
+# Build image
+docker build -t mlops-back:1.0 .
+
+# Run container (fails because CURRENT_ENVIRONMENT not set, as expected for this step)
+docker run --rm --name mlops-back-test mlops-back:1.0

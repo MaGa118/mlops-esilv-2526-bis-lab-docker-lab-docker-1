@@ -1,0 +1,11 @@
+cd app/back
+
+# Pull the image from Docker Hub
+docker pull gsalon/mlops-back:1.0
+
+# Run the container in detached mode (-d flag)
+# Ports and environment variable are needed
+docker run -d -p 5000:5000 -e CURRENT_ENVIRONMENT=dev --name mlops-back-prod gsalon/mlops-back:1.0
+
+# Note: What happens before the image starts is that all layers are downloaded from Docker Hub
+# (pulling from repository), then the container is launched in the background.
